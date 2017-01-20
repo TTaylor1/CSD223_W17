@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Learn Javascript</title>
+        <link rel="stylesheet" type="text/css" href="/LearnJavascript_mvn/resources/css/myLayout.css">
+        <script>
+            function myFunction() {
+                alert('This script was executed from the head');
+            }
+        </script>
+    </head>
+    <body id="body">
+        <div id="container" class="grid-container outline">
+            <div class="row" style="max-height: 100px;min-height: 50px">
+                <div class="col-1">
+                    <h1>Wombats'</h1>
+                </div>
+                <div class="col-4" style="">
+                    <h1>Learning Javascript &AMP; CSS:</h1> a collection of resources
+                </div>
+
+                <div class="col-1" style="text-align: right">
+                    <h1>Signin</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-5">
+                    <h2>Including Javascript</h2>
+                    <a href="http://www.w3schools.com/js/js_whereto.asp">Online...</a>
+                </div> 
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-1">
+                                <div>
+                                    <div>[css]
+                                    </div>
+                                    <p><a href="/LearnJavascript_mvn/index.html">Including Styles</a></p>
+                                    <p><a href="/LearnJavascript_mvn/css_2.html">???</a></p>
+                                    <div>[js]
+                                        <p><a href="/LearnJavascript_mvn/js_2.html">Including Javascript</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5" style="background-color: #eeffee">
+                                <div style="text-align: left">
+                                    <h2>In the head</h2>
+                                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;script&gt;
+function myFunction() {
+    alert('This script was executed from the head');
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;My Web Page&lt;/h1&gt;
+
+&lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+
+&lt;button type="button" onclick="myFunction()"&gt;Execute head script&lt;/button&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                                    </pre>
+                                    <div>
+                                        <button type="button" onclick="myFunction()">Execute head script</button>
+                                    </div>
+                                </div>
+                                <div class="spacer"></div>
+                                <div style="text-align: left">
+                                    <h2>In the body</h2>
+                                    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt; 
+
+&lt;h1&gt;My Web Page&lt;/h1&gt;
+
+&lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+
+&lt;button type="button" onclick="myFunction2()"&gt;Execute body script&lt;/button&gt;
+
+&lt;script&gt;
+function myFunction2() {
+   alert('This script was executed from the body');
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+                                    </pre>
+                                    <div>
+                                        <button type="button" onclick="myFunction2()">Execute body script</button>
+                                    </div>
+                                </div>
+<script>
+function myFunction2() {
+   alert('This script was executed from the body');
+}
+</script>
+
+                            </div> 
+                            <!--div class="col-1" style="text-align: left">
+                                East
+                            </div-->
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                wombat software
+                            </div>
+                            <div class="col-2">
+                                <div style="text-align: center">
+                                    Footer
+                                </div>
+                            </div> 
+                            <div class="col-2" style="text-align: right">
+                                Copyright
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+    </body>
+</html>

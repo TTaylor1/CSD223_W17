@@ -1,0 +1,19 @@
+Chapter 11 requires you to write a php app.
+Clone it from http://10.40.40.94/fcarella/Chapter11_git.git
+
+Students need to install xampp and then create a Netbeans based PHP project in the
+    e:\xampp\htdocs
+folder (or wherever they installed xampp.  You can copy the above cloned project into this folder)
+
+My project is called
+E:\xampp\htdocs\Chapter11
+
+Notes**
+- solar.htm executes script.js which uses the server as a proxy to get the data 
+from forecast.io
+
+- solar_using_jsonp.htm was added by me and executes scriptJSONP.js which gets the data from 
+forecast.io directly without the need of a proxy.
+
+
+

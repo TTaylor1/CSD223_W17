@@ -1,0 +1,102 @@
+@import url("/csd223_fred_carella_private_mvn_nb8_git/resources/css/reset.css");
+
+body {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color:#333;
+}
+
+/*****************http://j4n.co/blog/Creating-your-own-css-grid-system***********************************/
+/*apply border box sizing to all elements*/
+* {box-sizing: border-box;}
+
+.grid-container{
+    /* width: 100%; */
+    /* max-width: 1200px;*/
+    
+    /* custom to center horizontally*/
+    width: 90%;
+    
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-- our cleafix hack -- */ 
+.row:before, 
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+}
+/*
+To find the width of one column, all we have to do is divide the total number of columns 
+by the width of the container. In our case, the width of the container is 100%, and we want 
+6 columns, so 100/6 = 16.66, so our base column width is 16.66%.
+*/
+/*
+Before the 'border-box' box-sizing model, giving percentage-width elements a static padding 
+was a real pain. Luckily, using the 'border-box' model, we can create gutters with ease.
+*/
+
+[class*='col-'] {
+    float: left; 
+    min-height: 1px; 
+    width: 16.66%; 
+    /*-- our gutter -- */
+    padding: 12px; 
+    background-color: #FFFFFF;
+}
+/*
+This of course, is just the beginning. If we want a section that's 2 columns wide, we have 
+to create an 2-column-wide column. The calculations are pretty simple.
+*/
+
+.col-1{ width: 16.66%; }
+.col-2{ width: 33.33%; }
+.col-3{ width: 50%;    }
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
+
+/*.outline, .outline *{
+    outline: 1px solid #FFFFFF; 
+}/*
+
+
+/*-- some extra column content styling --*/
+[class*='col-'] > p {
+ background-color: #FFFFFF; 
+ padding: 0;
+ margin: 0;
+ text-align: center; 
+ color: black; 
+}
+
+h1{
+    font-size: 2.2em;
+    font-weight: bold;
+}
+h2{
+    font-size: 1.7em;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+pre {
+    font-family: "Lucida Console", Monaco, monospace;
+    color: #e33b06;
+    background-color: #eeffff;
+}
+.spacer{
+    height: 1em;
+    width: 100%;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:0px;
+}

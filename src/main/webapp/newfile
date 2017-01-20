@@ -1,0 +1,70 @@
+Chapter 7
+
+Quick Quiz 1
+
+1. The term ____ specifically refers to programming code and data that can be treated as an individual unit or component.
+Answer: object
+
+2. The principle of ____ states that any methods and properties that other programmers do not need to access or know about should be hidden.
+Answer: information hiding
+
+3. In object-oriented programming, the code, methods, attributes, and other information that make up an object are organized into ____.
+Answer: classes
+
+4. A particular instance of an object ____ its methods and properties from a class.
+Answer: inherits
+
+5. True or False: Because objects in the browser object model are actually part of the web browser, you do not need to instantiate them in order to use them in your programs.
+Answer: True
+
+Quick Quiz 2
+ 
+1. The ____ class contains methods and properties for manipulating the date and time.
+Answer: Date
+
+2. The ____ method returns the minutes of a Date object.
+Answer: getMinutes()
+
+3. The ____ method converts a Date object to a millisecond format.
+Answer: valueOf()
+
+4. The ____ method converts a Date object to a string, set to the current time zone.
+Answer: toLocaleString()
+
+5. The ____ method sets the four-digit date of a Date object, with options to set the month and the day.
+Answer: setFullYear()
+
+Quick Quiz 3
+
+1. The ____ class contains methods for manipulating numbers and properties that contain static values representing some of the numeric limitations in the JavaScript language.
+Answer: Number
+
+2. The ____ class contains methods and properties for performing mathematical calculations in your programs.
+Answer: Math
+
+3. The ____ method of the Math class returns the larger of two numbers.
+Answer: max(x, y)
+
+4. The ____ property of the Math class represents the natural logarithm of two, which is approximately 0.6931471805599453.
+Answer: LN2
+
+5. The ____ property of the Math class represents the square root of 1/2, which is approximately 0.7071067811865476.
+Answer: SQRT1_2
+
+
+Quick Quiz 4
+
+1. A(n) ____ is an array whose elements are referred to with an alphanumeric key instead of an index number.
+Answer: associative array
+
+2. To delete a specific property in a custom object, you use the ____ operator.
+Answer: delete
+
+3. You can create a function that will be used as an object method by referring to any object properties it contains with the ____ reference.
+Answer: this
+
+4. True or False: When you add a new property to an object that has been instantiated from a constructor function, the new property is available to all objects instantiated from the same constructor function.
+Answer: False
+
+5. The ____ property is a built-in property that specifies the constructor from which an object was instantiated.
+Answer: prototype

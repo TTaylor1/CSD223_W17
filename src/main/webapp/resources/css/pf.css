@@ -1,0 +1,114 @@
+root { 
+    display: block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3a4f54;
+    background-color: #ffffff;
+    font-size: small;
+}
+
+a {
+    color: #1006A6;
+}
+
+table {
+    empty-cells: show;
+}
+
+form th, td th {
+    font-size: x-small;
+    color: #4e6a71;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #90b4bd;
+    border-right-color: #90b4bd;
+    letter-spacing: 3px;
+    text-align: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #b2d5d6;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: small;
+}
+
+form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #b2d5d6;
+    border-right-color: #b2d5d6;
+    vertical-align: baseline;
+    padding-bottom: 0px;
+}
+
+tr.odd_row {
+    background-color: #fefeff;
+    color: #4e6a71;
+}
+
+
+tr.even_row {
+    background-color: #eff5fa;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.TF, .MC td{
+    vertical-align: middle;
+    text-align: center;
+    padding:5px;
+}
+ul {
+list-style: disc;
+padding-left: 1.4em; 
+}
+ol {
+list-style: decimal;
+    padding: 4px;
+}
+li{
+padding-bottom: .5em; 
+}
+h3{
+    font-weight: bold;
+    font-size:1.2em;
+}
+h2{
+    font-weight: bold;
+    font-size:1.7em;
+}
+h1{
+    font-weight: bold;
+    font-size:2.2em;
+}
+p {
+    padding: 4px;
+}
+
