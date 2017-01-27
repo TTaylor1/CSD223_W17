@@ -38,7 +38,7 @@ body {
 
 h2 {
     font-family: fantasy;
-    padding-left: 190px;
+    padding-left: 130px;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -134,7 +134,10 @@ h2 {
 
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  
 }
 
 
@@ -153,10 +156,10 @@ h2 {
 }
 .masthead-nav > li + li {
   margin-left: 80px;
-  padding-right: 50px;
+  padding-right: 40px;
 }
 .masthead-nav > li > a {
-  padding-right: 100;  
+  padding-right: 120;  
   padding-left: 0;
   font-size: 18px;
   font-weight: bold;
