@@ -53,9 +53,37 @@ h3 {
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
-.site-wrapper-inner {
+.site-wrapper-inner2 {
   display: table-cell;
   vertical-align: top;
+  padding-top:150px;
+   background: url(background2.jpg) no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.site-wrapper-inner3 {
+  display: table-cell;
+  vertical-align: top;
+  padding-top:150px;
+   background: url(background3.png) no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.site-wrapper-inner4 {
+  display: table-cell;
+  vertical-align: top;
+  padding-top:150px;
+   background: url(background4.png) no-repeat fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
