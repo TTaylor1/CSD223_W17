@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 3
+      Hands-on Project 3-3
+
+      Author: Thomas Taylor 
+      Date:   February 3, 2017
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 3-3</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 3-3
+      </h1>
+   </header>
+
+   <article>
+      <h2>Scouting Locations</h2>
+      <div id="results">
+          <ul>
+             <li id="item1"></li>
+             <li id="item2"></li>
+             <li id="item3"></li>
+             <li id="item4"></li>
+             <li id="item5"></li>
+          </ul>
+      </div>
+   </article>
+    <script>
+        var places = ["Beach", "Home", "Work", "School", "Camp"];
+        
+        function processPlaces(){
+            for (var i = 0; i < 5; i++){
+                listItem = document.getElementById("item"+ (i+1))
+                listItem.innerHTML = places[i];
+            }
+        }
+        //Assign the page to auto load the Variables on page load
+   if (window.addEventListener) {
+		window.addEventListener ("load", processPlaces, false);
+   }
+   else if (window.attachEvent){
+		window.attachEvent ("onload", processPlaces);
+   }
+    </script>
+</body>
+</html>
