@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+      <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Tom's Hobbies - CS:GO KDR Calculator</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+
+   
+
+    <!-- Custom styles for this template -->
+    <link href="../cover.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="modernizr.custom.05819.js"></script>
+  </head>
+
+  <body>          
+      
+            <div class="inner">
+              <h2 class="masthead-brand">CounterStrike: Global Offensive</h2>
+              <nav>
+                <ul class="nav masthead-nav">                    
+                  <li ><a href="../Indexx.html">Home</a></li>
+                  <li><a href="../Indexx.html#WoW">WoW</a></li>
+                  <li><a href="../Indexx.html#CSGO">CSGO</a></li>
+                  <li><a href="../Indexx.html#ARK">Ark</a></li>
+                </ul>
+              </nav>
+            </div>
+      
+     
+            
+      <div id="wrapper">
+          
+            <nav2>   
+                <ul>
+                    <li> <a href="csgo.html">Home</a></li>
+                    <li><a href="kdr.html">KDRCalculator</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+                
+            </nav>
+              
+      </div>
+          <div id="container">
+              <div class="wrap">
+          <p>Kill to Death Ratio Calculator.</p>
+          
+          <br/>
+          
+          Kills: <input type="text" name="kills" size="5" id="kills" ><br>
+          
+          Deaths: <input type="text" name="deaths" size="5" id="deaths" ><br>
+          <input type="submit" id="submit" value="Calculate" /> <br>
+          <p id="kdr"></p>
+          <script>
+        function calcTotal(){
+        var kills = document.getElementById("kills").value;
+        var deaths = document.getElementById("deaths").value;
+        var KDR = 0;
+           parseInt(kills.value);
+           document.getElementById("kills").value = "";
+           document.getElementById("deaths").value = "";
+        KDR = kills / deaths;
+        
+        
+        document.getElementById("kdr").innerHTML = "Your Kill to Death Ratio is " + KDR.toFixed(2);
+        }
+        document.getElementById("submit").addEventListener("click", calcTotal, false);
+        </script>
+          </div>
+          </div>        
+            
+      
+    </body>
+</html>
