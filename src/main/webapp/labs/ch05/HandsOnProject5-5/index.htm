@@ -6,8 +6,8 @@
       Chapter 5
       Hands-on Project 5-5
 
-      Author: 
-      Date:   
+      Author: Thomas Taylor
+      Date:   February 23, 2017
 
       Filename: index.htm
    -->
@@ -50,5 +50,30 @@
       <h3 id="10">Amendment X</h3>
       <p>The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.</p>
    </article>
+    
+    <script>
+        var list = document.getElementsByTagName("ul")[0];
+        var headingText;
+        var TOCEntry;
+        
+        
+        function createTOC(){
+        for(var i = 1; i <= 10; i++){
+            headingText= document.getElementById([i]).innerHTML;
+            TOCEntry = document.createElement("li");
+            TOCEntry.innerHTML = "<a href=#" + i + ">" + headingText + "</a>";
+            list.appendChild(TOCEntry)[i];
+        }
+    }
+    
+   
+        if(window.addEventListener){
+            window.addEventListener("load", createTOC, false);
+        } else if(window.attachEvent){
+            window.attachEvent("onload", createTOC);
+        }
+    
+        
+    </script>
 </body>
 </html>
