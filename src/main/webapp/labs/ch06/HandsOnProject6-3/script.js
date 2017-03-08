@@ -1,15 +1,19 @@
 /*
       JavaScript 6th Edition
       Chapter 6
-      Hands-on Project 6-1
+      Hands-on Project 6-3
 
       Author: Thomas Taylor
-      Date:   March 7, 2017
+      Date:   March 8, 2017
 
       Filename: script.js
    */
   
-  "use strict"
+
+
+/* global modernizr: true */
+
+"use strict";
   var formValidity = true;
   
   function validateRequired(){
@@ -74,18 +78,7 @@
       }
   }
   
-  
-  /* create event listeners */
-  function createEventListeners(){
-      var form = document.getElementsByTagName("form")[0];
-      if (form.addEventListener){
-          form.addEventListener("submit", validateForm, false);
-      } else if (form.attachEvent){
-          form.attachEvent("onsubmit", validateForm);
-      }
-  }
-  
-  function validateForm(evt){
+    function validateForm(evt){
       if (evt.preventDefault){
           evt.preventDefault(); // prevent form from submitting
       } else {
@@ -99,11 +92,84 @@
       }
   }
   
+
+  function zeroPlaceholder()
+ {
+	 var addressBox = document.getElementById("addrinput");
+	 addressBox.style.color = "black";
+	 if (addressBox.value === addressBox.placeholder){
+		 addressBox.value = " ";
+	 }
+ }
+ 
+ function checkPlaceholder() {
+	 var addressBox = document.getElementById("addrinput");
+	 if (addressBox.value === "") {
+		 addressBox.style.color = "rgb(255,233,233)";
+		 addressBox.value = addressBox.placeholder;
+	 }
+ }
+ 
+ function generatePlaceholder() {
+	 if (!modernizr.input.placeholder) {
+		 var addressBox = document.getElementById("addrinput");
+		 addressBox.value = addressBox.placeholder;
+		 addressBox.style.color = "rgb(178,184,183)";
+		 if (addressBox.addEventListener) {
+			 addressBox.addEventListener("focus", zeroPlaceholder, false);
+			 addressBox.addEventListener("blur", zeroPlaceholder, false);
+		 } else if (addressBox.attachEvent){
+			 addressBox.attachEvent("onfocus", zeroPlaceholder);
+			 addressBox.attachEvent("onblur", zeroPlaceholder);
+		 }
+	 }
+ }
+  
+    function advanceSsn(){
+      var ssnFields = document.getElementsByClassName("ssn");
+      var currentField = document.activeElement;
+      if(currentField.value.length === currentField.maxLength){
+      if(currentField === ssnFields[0]) {
+          ssnFields[1].focus();
+      }
+      if(currentField === ssnFields[1]) {
+          ssnFields[2].focus();
+      }
+      if(currentField === ssnFields[2]){
+          document.getElementById("submitBtn").focus();
+      }
+  }
+  }
+  
+  /* create event listeners */
+  function createEventListeners(){
+      var form = document.getElementsByTagName("form")[0];
+      if (form.addEventListener){
+          form.addEventListener("submit", validateForm, false);
+      } else if (form.attachEvent){
+          form.attachEvent("onsubmit", validateForm);
+      }
+      
+      var ssnFields = document.getElementsByClassName("ssn");
+      for (var i = 0; i < ssnFields.length; i++){
+          if(ssnFields[i].addEventListener) {
+              ssnFields[i].addEventListener("input", advanceSsn, false);
+          } else if (ssnFields[i].attachEvent){
+              ssnFields[i].attachEvent("oninput", advanceSsn);
+          }
+      }
+  }
+  
+  function setUpPage() {
+	createEventListeners();
+	generatePlaceholder();
+}
+  
   /* run setup functions when page finishes loading */
   if(window.addEventListener){
-      window.addEventListener("load", createEventListeners, false);
+      window.addEventListener("load", setUpPage, false);
   } else if (window.attachEvent){
-      window.attachEvent("onload", createEventListeners);
+      window.attachEvent("onload", setUpPage);
   }
   
   
