@@ -10,14 +10,17 @@
    */
 
 
+
+
 "use strict";
 
-/* remove defaulst value and formatting from selection list */
+/* remove default value and formatting from selection list */
 function removeSelectDefault(){
     var selectBox = document.getElementById("size");
     selectBox.selectedIndex = -1;
-    selectBox.style.bowShadow = "none";
+    selectBox.style.boxShadow = "none";
 }
+/* remove fallback placeholder text */
 
 function zeroPlaceholder() {
 	 var instrBox = document.getElementById("instructions");
@@ -26,7 +29,7 @@ function zeroPlaceholder() {
 		 instrBox.value = "";
 	 }
  }
- 
+ /* restore placeholder text if box contains no user entry */
  function checkPlaceholder() {
 	 var instrBox = document.getElementById("instructions");
 	 if (instrBox.value === "") {
@@ -34,18 +37,18 @@ function zeroPlaceholder() {
 		 instrBox.value = instrBox.placeholder;
 	 }
  }
- 
+ /* add placeholder text for browsers that don't support placeholder attribute*/
  function generatePlaceholder() {
 	 if (!modernizr.input.placeholder) {
 		 var instrBox = document.getElementById("instructions");
 		 instrBox.value = instrBox.placeholder;
 		 instrBox.style.color = "rgb(178,184,183)";
-		 if (instrBox.input.placeholder){
+		 if (instrBox.addEventListener){
 			 instrBox.addEventListener("focus", zeroPlaceholder, false);
 			 instrBox.addEventListener("blur", checkPlaceholder, false);
 		 } else if (instrBox.attachEvent){
 			 instrBox.attachEvent("onfocus", zeroPlaceholder);
-			 instrBox.attachEvent("onblur", checkplaceholder);
+			 instrBox.attachEvent("onblur", checkPlaceholder);
 		 }
 	 }
  }
