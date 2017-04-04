@@ -12,8 +12,8 @@
   "use strict";
   
   //var newAccountArray;
-  var newAccountObject = {};
-  var newAccountSubmission;
+  var newAccountObject = {},
+   newAccountSubmission;
 
 function createID(){
     var fname = document.getElementById("fnameinput");
@@ -34,17 +34,16 @@ function createID(){
         newAccountObject = {};
         for (var i = 0; i < fields.length - 1; i++){
            // newAccountArray.push(fields[i].value);
-           newAccountObject[fields(i).name] = fields[i].value;
+           newAccountObject[fields[i].name] = fields[i].value;
         }
-    }
-    
+    }    
 }
 
 function createString(){
     newAccountSubmission = JSON.stringify(newAccountObject);
 }
 
-function createEventListener(){
+function createEventListeners(){
     var fname = document.getElementById("fnameinput");
     var lname = document.getElementById("lnameinput");
     var zip = document.getElementById("zipinput");
@@ -59,7 +58,7 @@ function createEventListener(){
         zip.attachEVent("onchange", createID);
     }
     
-    var button = document.getElementByID("submitBtn");
+    var button = document.getElementById("submitBtn");
     if (button.addEventListener){
         button.addEventListener("click", createString, false);
     } else if (button.attachEvent){
@@ -68,7 +67,7 @@ function createEventListener(){
 }
 
 if(window.addEventListener){
-    window.addEventListener("load", createEventListener, false);
+    window.addEventListener("load", createEventListeners, false);
 }else if(window.attachEvent){
-    window.attachEvent("onload", createEventListener);
+    window.attachEvent("onload", createEventListeners);
 }
