@@ -1,9 +1,9 @@
 /*  JavaScript 6th Edition
     Chapter 11
-    Hands-on Project 11-2
+    Hands-on Project 11-3
 
     Author: Thomas Taylor
-    Date:   April 18, 2017
+    Date:   April 19, 2017
 
     Filename: script.js
 */
@@ -43,6 +43,8 @@ function getQuote(){
     httpRequest.open("get","StockCheck.php?t=" + entry, true);
     httpRequest.send();
     httpRequest.onreadystatechange = displayData;
+    clearTimeout(updateQuote);
+    var updateQuote = setTimeout('getQuote()', 10000);
 }
 
 function displayData(){

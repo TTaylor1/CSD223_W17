@@ -1,6 +1,6 @@
 /*  JavaScript 6th Edition
     Chapter 11
-    Hands-on Project 11-4
+    Hands-on Project 11-5
 
     Author: Thomas Taylor
     Date:   April 19, 2017
@@ -11,6 +11,7 @@
 "use strict";
 
 var httpRequest = false;
+var countrySel;
 
 function getRequestObject(){
     try {
@@ -18,17 +19,37 @@ function getRequestObject(){
     }
     catch(requestError){
         // display city & state fields and labels for manual input
+        document.getElementById("zipset").style.visibility = "visible";
         document.getElementById("csset").style.visibility = "visible";
         // remove event listeners so additional input is ignored
+        var germany = document.getElementById("germany");
+        var us = document.getElementById("us");
         var zip = document.getElementById("zip").value;
         if (zip.addEventListener){
             zip.removeEventListener("keyup", checkInput, false);
-        } else if (zip.attachEvent){
+            germany.removeEventListener("click", checkButtons, false);
+            us.removeEventListener("click", checkButtons, false);
+        } else if (zip.attachEvent){            
             zip.detachEvent("onkeyup", checkInput);
+            germany.detachEvent("onclick", checkButtons);
+            us.detachEvent("onclick", checkButtons);
         }
         return false;
     }
     return httpRequest;
+}
+
+function checkButtons(){
+    var germany = document.getElementById("germany");
+    var us = document.getElementById("us");
+    if(germany.checked || us.checked){
+        document.getElementById("zipset").style.visibility = "visible";
+        if(germany.checked){
+            countrySel = "de";
+        } else {
+            countrySel = "us";
+        }
+    }
 }
 
 function checkInput(){
@@ -47,7 +68,7 @@ function getLocation(){
         httpRequest = getRequestObject();        
     }
     httpRequest.abort();
-    httpRequest.open("get","http://apz.zippopotam.us/us/" + zip, true);
+    httpRequest.open("get","http://apz.zippopotam.us/" + countrySel + "/" + zip, true);
     httpRequest.send();
     httpRequest.onreadystatechange = DisplayData;
 }
@@ -63,6 +84,17 @@ function DisplayData(){
         document.getElementById("csset").style.visibility = "visible";
     }
 }
+
+var germany = document.getElementById("germany");
+var us = document.getElementById("us");
+if(us.addEventListener){
+    germany.addEventListener("click", checkButtons, false);
+    us.addEventListener("click", checkButtons, false);
+} else if (us.attachEvent){
+    germany.attachEvent("onclick", checkButtons);
+    us.attachEvent("onclick", checkButtons);
+}
+    
 
 var zip = document.getElementById("zip");
 if (zip.addEventListener){
